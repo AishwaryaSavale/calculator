@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 def add(x, y):
     return x + y
 
@@ -19,32 +13,40 @@ def divide(x, y):
     else:
         return x / y
 
-print("Select operation:")
-print("1. Add")
-print("2. Subtract")
-print("3. Multiply")
-print("4. Divide")
+def calculator():
+    while True:
+        print("\nOptions:")
+        print("1. Addition")
+        print("2. Subtraction")
+        print("3. Multiplication")
+        print("4. Division")
+        print("5. Exit")
 
-choice = input("Enter choice (1/2/3/4): ")
+        choice = input("Enter your choice (1/2/3/4/5): ")
 
-if choice in ('1', '2', '3', '4'):
-    num1 = float(input("Enter first number: "))
-    num2 = float(input("Enter second number: "))
+        if choice == '5':
+            print("Exiting the calculator. Goodbye!")
+            break
 
-    if choice == '1':
-        print("Addition:", add(num1, num2))
-    elif choice == '2':
-        print("Result:", subtract(num1, num2))
-    elif choice == '3':
-        print("Result:", multiply(num1, num2))
-    elif choice == '4':
-        print("Result:", divide(num1, num2))
-else:
-    print("Invalid input")
+        num1 = float(input("Enter 1st number: "))
+        num2 = float(input("Enter 2nd number: "))
 
+        if choice == '1':
+            print("Result is :", add(num1, num2))
+        elif choice == '2':
+            print("Result is :", subtract(num1, num2))
+        elif choice == '3':
+            print("Result is :", multiply(num1, num2))
+        elif choice == '4':
+            print("Result is :", divide(num1, num2))
+        else:
+            print("Invalid Input! Please enter a valid choice.")
 
-# In[ ]:
+        continue_choice = input("Do you want to continue? (yes/no): ")
+        if continue_choice.lower() != 'yes':
+            print("Exiting the calculator. Goodbye!")
+            break
 
-
+calculator()
 
 
